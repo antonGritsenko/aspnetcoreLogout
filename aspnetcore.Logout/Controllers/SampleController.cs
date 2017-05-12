@@ -23,6 +23,7 @@ namespace aspnetcore.Logout.Controllers
         }
         [HttpGet]
         [Route("GetUserData")]
+        [ResponseCache(NoStore = true)]
         public IActionResult GetUserData()
         {
             Dictionary<string, object> ret = new Dictionary<string, object>();
