@@ -1,0 +1,19 @@
+﻿
+<div>
+    <h3>User infomation for page context</h3>
+    <span>User from context:</span><span>@User.Identity.Name</span>
+    @{ 
+        var currentThread = System.Threading.Thread.CurrentThread;
+        var wi = System.Security.Principal.WindowsIdentity.GetCurrent();
+    }
+    <p>
+        <span>User from WindowsIdentity:</span><span>@wi.Name</span>
+    </p>
+    <p>
+        <span>Thread ID:</span><span>@currentThread.ManagedThreadId</span>
+    </p>
+    <p>
+        <span>User from thread:</span><span>@System.Threading.Thread.CurrentPrincipal.Identity?.Name</span>
+    </p>
+</div>
+<div id="datacontainer"></div>
